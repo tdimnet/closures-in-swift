@@ -21,7 +21,12 @@ addTwoNumbers(1, 2)
 
 
 
+// Functions as Parameters
+func displayString(usingFunction function: (String) -> Void) {
+    function("I am a function inside a function")
+}
 
+displayString(usingFunction: printString)
 
 
 
