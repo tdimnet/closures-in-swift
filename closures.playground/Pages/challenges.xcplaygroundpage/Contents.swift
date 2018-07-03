@@ -14,4 +14,37 @@ func addTwo(to: Int) -> Int {
 }
 
 let addition = addTwo
-let result = addition(2)
+//let result = addition(2)
+
+
+/*
+ * 2.1
+ * In an extension to the String type, declare a function named transform. The function should accept as an argument another function of type (String) -> String. For this argument, let's omit the external label. The transform function should also return a String.
+ *
+ * 2.2
+ * Create a function named removeVowels that takes a string and returns a string. Name the external argument label for the parameter from. In the body of the method, return a new String literal with the vowels (in the English language) removed from the value passed in as an argument.
+ *
+ * 2.3
+ * On the string "Hello, World!", call the transform function and use the removeVowels(from:) function as an argument. Assign the result to a constant named result.
+ */
+
+extension String {
+    func transform(_ argument: (String) -> String) -> String {
+        return argument(self)
+    }
+}
+
+func removeVowels(from string: String) -> String {
+    var newString = ""
+    for character in string.characters {
+        if ["a","e","i","o","u"].contains(character) {
+            continue
+        }
+        
+        newString.append(character)
+    }
+    
+    return newString
+}
+let result = "Hello, World!".transform(removeVowels)
+
