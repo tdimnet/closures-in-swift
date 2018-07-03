@@ -66,8 +66,12 @@ func closestMultipleOfSix(_ value: Int) -> Int {
 typealias IntegerFunction = (Int) -> Void
 
 func gameCounter() -> IntegerFunction {
+    
+    var localCounter = 0
+    
     func increment(_ i: Int) {
-        print("Integer passed in: \(i)")
+        localCounter += i
+        print("Local counter value: \(localCounter)")
     }
     
     return increment
@@ -75,8 +79,13 @@ func gameCounter() -> IntegerFunction {
 
 let counter = gameCounter()
 counter(1)
+counter(1)
+counter(1)
 
+print("******")
 
+let anotherCounter = gameCounter()
+anotherCounter(1)
 
 
 
