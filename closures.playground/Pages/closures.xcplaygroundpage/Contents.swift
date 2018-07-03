@@ -29,10 +29,36 @@ func displayString(usingFunction function: (String) -> Void) {
 displayString(usingFunction: printString)
 
 
+// Externding the Int Type - Higher Order Functions
+extension Int {
+    func applyOperation(_ operation: (Int) -> Int) -> Int {
+        return operation(self)
+    }
+}
 
+func double(_ value: Int) -> Int {
+    return value * 2
+}
 
+10.applyOperation(double)
 
+func closestMultipleOfSix(_ value: Int) -> Int {
+    for x in 1...100 {
+        let multiple = x * 6
+        
+        if multiple - value < 6 && multiple > value {
+            return multiple
+        } else if multiple == value {
+            return value
+        }
+    }
+    
+    return 0
+}
 
+32.applyOperation(closestMultipleOfSix)
+12.applyOperation(closestMultipleOfSix)
+200.applyOperation(closestMultipleOfSix)
 
 
 
