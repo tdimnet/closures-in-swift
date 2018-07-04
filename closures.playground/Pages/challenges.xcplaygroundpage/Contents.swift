@@ -48,3 +48,36 @@ func removeVowels(from string: String) -> String {
 }
 let result = "Hello, World!".transform(removeVowels)
 
+
+/*
+ * 3
+ * In the editor, we're using the map function on an array of numbers to perform an operation. The doubler function is used as an argument to map to create a closure.
+ */
+
+func double(_ i: Int) -> Int {
+    return i * 2
+}
+
+let doubler = double
+let doubledValues = [1,2,3,4].map(doubler)
+
+[1,2,3,4].map { $0 * 2 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
