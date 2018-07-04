@@ -2,6 +2,7 @@
 <playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
     <pages>
         <page name='challenges'/>
-        <page name='closures'/>
+        <page name='Functions'/>
+        <page name='Closure Expressions'/>
     </pages>
 </playground>
