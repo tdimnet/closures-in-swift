@@ -1,6 +1,6 @@
 // Errors and Memory
 extension Int {
-    func apply(_ value: Int, operation: (Int, Int) throws -> Int) throws -> Int {
+    func apply(_ value: Int, operation: (Int, Int) throws -> Int) rethrows -> Int {
         return try operation(self, value)
     }
 }
@@ -21,10 +21,9 @@ do {
     print("Error")
 }
 
+10.apply(12) { $0 + $1 }
 
-
-
-
+[1, 2].map { $0 }
 
 
 
