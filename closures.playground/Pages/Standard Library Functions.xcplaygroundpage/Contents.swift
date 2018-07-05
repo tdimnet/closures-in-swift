@@ -42,13 +42,48 @@ struct Formatter {
 let dateStrings = ["20 Oct 1978", "11 Jan 1947", "28 Mar 2002"]
 
 let dates = dateStrings.customMap { Formatter.date(from: $0) }
-print(dates)
+//print(dates)
 
 
+// Flat Map
+struct Post {
+    var content: String
+    var tags: [String]
+}
 
+let blog: [Post] = [
+    Post(content: "Hello, world", tags: ["first", "programming"]),
+    Post(content: "Just another short post", tags: ["general"])
+]
 
+let tags = blog.flatMap { $0.tags }
 
+extension Array {
+    func customFlatMap<T>(_ transform: (Element) -> [T]) -> [T] {
+        var result = [T]()
+        
+        for x in self {
+            result.append(contentsOf: transform(x))
+        }
+        
+        return result
+    }
+}
 
+struct Account {
+    let username: String
+    let billingAddress: String?
+}
+
+let allUsers = [
+    Account(username: "pasanpr", billingAddress: nil),
+    Account(username: "benjakuben", billingAddress: "1234, baker street"),
+    Account(username: "instantNadel", billingAddress: "2345, from nowwhere"),
+    Account(username: "sketchings", billingAddress: nil),
+    Account(username: "paradoxed", billingAddress: "1122 Nope Land")
+]
+
+let validAddresses = allUsers.flatMap { $0.billingAddress }
 
 
 
