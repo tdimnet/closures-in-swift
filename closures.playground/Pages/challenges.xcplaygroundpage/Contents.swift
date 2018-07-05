@@ -94,10 +94,13 @@ let oddValues = numbers3.filter { $0 % 2 != 0 }
 print(oddValues)
 
 
-
-
-
-
+/*
+ * 7
+ * In the editor you've been provided with an array of several people's ages. Using the reduce function, calculate the sum of the ages and assign it to a value named total.
+ */
+let ages = [12,10,11,42,35,27,91,82,26,33,37,15]
+let total = ages.reduce(0, { total, age in total + age })
+print(total)
 
 
 
