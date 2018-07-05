@@ -86,6 +86,28 @@ let allUsers = [
 let validAddresses = allUsers.flatMap { $0.billingAddress }
 
 
+// Filter
+let evenNumbers = (0...100).filter { $0 % 2 == 0 }
+//print(evenNumbers)
+
+extension Array {
+    func customFilter(_ isIncluded: (Element) -> Bool) -> [Element] {
+        var result = [Element]()
+        
+        for x in self where isIncluded(x) {
+            result.append(x)
+        }
+        
+        return result
+    }
+}
+
+let somePUsers = allUsers.customFilter { $0.username.characters.first == "p" }
+print(somePUsers)
+
+
+
+
 
 
 
