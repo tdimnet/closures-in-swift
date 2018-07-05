@@ -103,10 +103,30 @@ extension Array {
 }
 
 let somePUsers = allUsers.customFilter { $0.username.characters.first == "p" }
-print(somePUsers)
+//print(somePUsers)
 
 
+// Reduce
+let scores = [10, 12, 11, 10, 12, 9]
 
+let totalScore = scores.reduce(0, { total, score in total + score })
+
+extension Array {
+    func customReduce<Result>(_ initial: Result, _ nextPartialResult: (Result, Element) -> Result) -> Result {
+        var result = initial
+        
+        for x in self {
+            result = nextPartialResult(result, x)
+        }
+        
+        return result
+    }
+}
+
+
+let dataSet = (1...100).filter { $0 % 3 == 0 && $0 % 7 == 0 }
+let identifier = dataSet.reduce("", { string, number in string + "\(number)" })
+print(identifier)
 
 
 
