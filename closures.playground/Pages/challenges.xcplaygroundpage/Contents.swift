@@ -83,7 +83,15 @@ let flattenedNumbers = numbers2.flatMap { $0 }
 print(flattenedNumbers)
 
 
+/*
+ * 6
+ * Apply the filter function on the numbers array provided to end up with an array of odd numbers.
+ * Assign the value to a constant named oddValues.
+ */
+let numbers3 = [10,423,802,765,943,12,405,230,1348,128,237]
 
+let oddValues = numbers3.filter { $0 % 2 != 0 }
+print(oddValues)
 
 
 
