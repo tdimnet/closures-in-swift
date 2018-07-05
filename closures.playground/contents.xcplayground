@@ -4,5 +4,6 @@
         <page name='challenges'/>
         <page name='Functions'/>
         <page name='Closure Expressions'/>
+        <page name='Standard Library Functions'/>
     </pages>
 </playground>
