@@ -73,8 +73,14 @@ let numbers = [1,2,3,4,5]
 let numberStrings = numbers.map { String($0) }
 
 
+/*
+ * 5
+ * Using the flatMap function, transform the nested arrays in the numbers constant to a flattened array.
+ */
+let numbers2 = [[1,2,3], [4,5,6], [7,8,9]]
 
-
+let flattenedNumbers = numbers2.flatMap { $0 }
+print(flattenedNumbers)
 
 
 
