@@ -64,9 +64,13 @@ let doubledValues = [1,2,3,4].map(doubler)
 [1,2,3,4].map { $0 * 2 }
 
 
+/*
+ * 4
+ * Use the map function to iterate over the numbers array and transform the values to their string representations. Assign the resulting array to a constant named numberStrings.
+ */
 
-
-
+let numbers = [1,2,3,4,5]
+let numberStrings = numbers.map { String($0) }
 
 
 
